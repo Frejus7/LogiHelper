@@ -8,7 +8,7 @@ export const LoginPage = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
-  const { status } = useSelector((state) => state.auth || {});
+  const { status } = useSelector((state) => state.auth);
   const isAuth = useSelector(checkIsAuth)
   const dispatch = useDispatch()
   const navigate = useNavigate()

@@ -11,7 +11,7 @@ export const createPost = createAsyncThunk(
     'post/createPost',
     async (params) => {
         try {
-            const { data } = await axios.post('/posts', params);
+            const { data } = await axios.post('/routes/posts', params);
             return data;
         } catch (error) {
             console.log(error);
@@ -21,7 +21,7 @@ export const createPost = createAsyncThunk(
 
 export const getAllPosts = createAsyncThunk('post/getAllPosts', async () => {
     try {
-        const { data } = await axios.get('/posts');
+        const { data } = await axios.get('/routes/posts');
         return data;
     } catch (error) {
         console.log(error);
@@ -30,7 +30,7 @@ export const getAllPosts = createAsyncThunk('post/getAllPosts', async () => {
 
 export const removePost = createAsyncThunk('post/removePost', async (id) => {
     try {
-        const { data } = await axios.delete(`/posts/${id}`, id);
+        const { data } = await axios.delete(`/routes/posts/${id}`, id);
         return data;
     } catch (error) {
         console.log(error);
@@ -39,7 +39,7 @@ export const removePost = createAsyncThunk('post/removePost', async (id) => {
 
 export const updatePost = createAsyncThunk('post/updatePost', async (updatedPost) => {
     try {
-        const { data } = await axios.put(`/posts/${updatedPost.id}`, updatePost);
+        const { data } = await axios.put(`/routes/posts/${updatedPost.id}`, updatePost);
         return data;
     } catch (error) {
         console.log(error);

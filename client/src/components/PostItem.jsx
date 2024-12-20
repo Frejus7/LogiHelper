@@ -15,10 +15,10 @@ export const PostItem = ({ post }) => {
     <Link to={`/${post._id}`}>
         <div className='flex flex-col basis-1/4 flex-grow'>
             <div className={
-                post.imgURL ? 'flex rounded-sm h-80' : 'flex rounded-sm'
+                post.imgUrl ? 'flex rounded-sm h-80' : 'flex rounded-sm'
             }>
-                {post.imgURL && (
-                    <img src={`http://localhost:3002/${post.imgURL}`} alt='img' className='object-cover w-full' />
+                {post.imgUrl && (
+                    <img src={`http://localhost:3002/${post.imgUrl}`} alt='img' className='object-cover w-full' />
                 )}
             </div>
             <div className='flex justify-between item-center pt-2'>

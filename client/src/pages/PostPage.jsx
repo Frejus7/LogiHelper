@@ -41,18 +41,19 @@ export const PostPage = () => {
   }
 
   const fetchComments = useCallback( async () => {
-      try {
-        dispatch(getPostComments(params.id))
-      } catch (error) {
-        console.log(error)
-      }
-    },[params.id, dispatch])
+    try {
+      dispatch(getPostComments(params.id))
+    } catch (error) {
+      console.log(error)
+    }
+  },[params.id, dispatch])
   
 
-  const fetchPost = useCallback(async() => {
-    const { data } = await axios.get(`/posts/${params.id}`)
-    setPost(data)
-  }, [params.id])
+  const fetchPost = useCallback(async () => {
+    const { data } = await axios.get(`/routes/posts/${params.id}`);
+    setPost(data);
+  }, [params.id]);
+
 
   useEffect (() => {
     fetchPost()
@@ -82,10 +83,10 @@ export const PostPage = () => {
         <div className='w-1/3'>
           <div className='flex flex-col basis-1/4 flex-grow'>
             <div className={
-                post.imgURL ? 'flex rounded-sm h-80' : 'flex rounded-sm'
+                post.imgUrl ? 'flex rounded-sm h-80' : 'flex rounded-sm'
             }>
-                {post?.imgURL && (
-                    <img src={`http://localhost:3002/${post.imgURL}`} alt='img' className='object-cover w-full' />
+                {post?.imgUrl && (
+                    <img src={`http://localhost:3002/${post.imgUrl}`} alt='img' className='object-cover w-full' />
                 )}
             </div>
           </div>
@@ -93,7 +94,7 @@ export const PostPage = () => {
           <div className='flex justify-between item-center pt-2'>
               <div className='text-xs text-white'>{post.username}</div>
               <div className='text-xs text-white'>
-                  <Moment data={post.createdAt} format='D MMM YYYY'/>
+                  <Moment date={post.createdAt} format='D MMM YYYY'/>
               </div>
           </div>
           <div className='text-xl text-white'>{post.title}</div>
@@ -109,7 +110,7 @@ export const PostPage = () => {
                 </button>
               </div>
 
-                {user?._id === post.authot && (
+                {user?._id === post.author && (
                   <div className='flex gap-3 mt-4'>
                     <button className='flex ites-center justify-center gap-2 text-white'>
                       <Link to = {`/${params.id}/edit`}>
@@ -131,13 +132,13 @@ export const PostPage = () => {
               value={comment}
               onChange={(e) => setComment(e.target.value)}
               placeholder='Comment'
-              className='text-black w-full rounded-sm bg-gray-400 border p-2 text-xs outline-none placeholders:text-gray-700'
+              className='text-black w-full rounded-sm bg-gray-400 border p-2 text-xs outline-none'
             />
             <button type='submit'
             onClick={handleSubmit}
             className='flex justify-center items-center bg-gray-600 text-xs text-white rounded-sm py-2 px-4'
             >
-              Відправити
+              Додати коментар
             </button>
           </form>
           {

@@ -18,7 +18,7 @@ router.get('/:id', getById)
 
 // get my posts
 // http://localhost:3002/api/posts/user/me
-router.get('/user/me',checkAuth, getMyPosts)
+router.get('/user/me', checkAuth, getMyPosts)
 
 // delete post 
 // http://localhost:3002/api/posts/:id

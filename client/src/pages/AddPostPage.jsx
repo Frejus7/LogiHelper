@@ -69,7 +69,7 @@ export const AddPostPage = () => {
             <div className='flex gap-8 items-center justify-center mt-4'>
                 <button
                     onClick={submitHandler}
-                    className='flex justify-center items-center bg-gray-600 text-xs text-white rounded-sm py-2 px-4'
+                    className='flex justify-center items-center bg-green-600 text-xs text-white rounded-sm py-2 px-4'
                 >
                     Додати
                 </button>

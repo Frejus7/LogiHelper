@@ -5,9 +5,9 @@
 @layer base {
   body {
     font-family: 'Roboto', sans-serif;
-    background: #727d92; /* Однотонний лаймовий фон */
-    background: -webkit-linear-gradient(to right, #37445f, #727d92); /* Градієнт від світло-зеленого до темно-зеленого для WebKit */
-    background: linear-gradient(to right, #37445f, #727d92); /* Градієнт від світло-зеленого до темно-зеленого */
+    background: #5a6d66; /* Фолбек колір */
+    background: -webkit-linear-gradient(to right, #2f4f4f, #5a6d66);
+    background: linear-gradient(to right, #2f4f4f, #5a6d66);
     min-height: 100vh;
   }
 }

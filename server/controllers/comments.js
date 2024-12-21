@@ -3,7 +3,7 @@ import Post from '../models/Post.js'
 
 export const createComment = async (req, res) => {
     try {
-        const {postId, comment} = res.body
+        const {postId, comment} = req.body
 
         if (!comment)
             return res.json({ message: 'Коментар не може бути пустим'})
